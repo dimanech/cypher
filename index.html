@@ -11,7 +11,7 @@
 <body>
 <div class="content">
     <div class="header">
-        <img src="static/images/enigma.png" alt="Enigma" width="320" height="240">
+        <img src="static/images/enigma.png" alt="Cypher logo" width="320" height="240">
         <h1>Cypher machine</h1>
         <p>// Generate-Regenerate a password using a cipher //</p>
     </div>
@@ -28,13 +28,23 @@
         </div>
         <div class="form-field">
             <label for="site">Site:</label>
-            <input type="text" id="site" placeholder="github.com / any string"/>
+            <input
+                type="text"
+                id="site"
+                placeholder="github.com / any string"
+                autocomplete="off"
+            />
         </div>
     </div>
     <div class="result">
         <div class="form-field">
             <label for="password">Password:</label>
-            <input type="text" id="password" readonly/>
+            <input
+                type="text"
+                id="password"
+                readonly
+                autocomplete="off"
+            />
         </div>
         <div id="hint"></div>
     </div>
