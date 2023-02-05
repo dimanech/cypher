@@ -85,6 +85,10 @@ input:focus {
     outline: 2px solid var(--color1);
 }
 
+input#password:focus {
+    outline: none;
+}
+
 input::placeholder {
     color: rgba(0, 0, 0, 0.4);
 }
