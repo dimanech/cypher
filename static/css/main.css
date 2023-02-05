@@ -86,8 +86,8 @@ input {
 }
 
 input:focus {
-    outline: none;
     background-color: rgba(255, 255, 255, 0.5);
+    outline: 2px solid var(--color1);
 }
 
 input::placeholder {
@@ -130,9 +130,18 @@ input::placeholder {
 }
 
 #hint {
-    text-align: center;
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 38px;
+    right: 10px;
+    font-size: 18px;
+    white-space: nowrap;
+    user-select: none;
+}
+
+@media (max-width: 600px) {
+    #hint {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }

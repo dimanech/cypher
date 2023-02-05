@@ -1,11 +1,11 @@
 {
-  "name": "enigma-machine",
+  "name": "cypher-machine",
   "version": "1.0.0",
   "description": "Generate a password for a site using a cipher",
   "main": "main.mjs",
   "type": "module",
   "bin": {
-    "enigma": "bin/enigma.mjs"
+    "enigma": "bin/cypher.mjs"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
