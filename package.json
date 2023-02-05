@@ -1,0 +1,18 @@
+{
+  "name": "enigma-machine",
+  "version": "1.0.0",
+  "description": "Generate a password for a site using a cipher",
+  "main": "main.mjs",
+  "type": "module",
+  "bin": {
+    "enigma": "bin/enigma.mjs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dmytro Nechepurenko",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "pbkdf2-hmac": "^1.1.0"
+  }
+}

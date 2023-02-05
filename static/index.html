@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Enigma machine</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script type="module" src="js/main.mjs"></script>
+</head>
+<body>
+<div class="content">
+    <div class="header">
+        <img src="images/enigma.png" alt="Enigma" width="320" height="240">
+        <h1>Enigma machine</h1>
+        <p>// Generate a password for a site using a cipher //</p>
+    </div>
+    <div class="main">
+        <p>Enter a <strong>site</strong> and a <strong>cipher</strong> and password will be generated.</p>
+        <div class="form-field">
+            <label for="site">Site:</label>
+            <input type="text" id="site" placeholder="github.com / any string"/>
+        </div>
+        <div class="form-field">
+            <label for="cipher">Cipher:</label>
+            <input
+                type="text"
+                id="cipher"
+                placeholder="correct horse battery staple"
+                value="correct horse battery staple"
+            />
+        </div>
+    </div>
+    <div class="result">
+        <div class="form-field">
+            <label for="password">Password:</label>
+            <input type="text" id="password" readonly/>
+        </div>
+        <div id="hint"></div>
+    </div>
+</div>
+</body>
+</html>
