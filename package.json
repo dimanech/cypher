@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dmytro Nechepurenko",
-  "license": "BSD-3-Clause",
+  "license": "GNU GPLv3",
   "dependencies": {
     "pbkdf2-hmac": "^1.1.0"
   }
