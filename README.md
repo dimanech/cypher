@@ -1,10 +1,17 @@
 # "Cypher machine" password generator/regenerator
 
-This is a simple password generator/regenerator that use cipher and site name to generate a password.
+The "Cypher machine" password generator/regenerator is a simple tool for creating and regenerating passwords. It operates by utilizing a cipher and a site name to generate a password.
 
-The concept behind this generator is pretty simple. You create unicode based cipher and then encrypt any string (in our case it is site name) with PBKDF2-HMAC(SHA-256) algorithm, then result mapped to [RFC1924](https://www.rfc-editor.org/rfc/rfc1924) character set. The final result is password string.
+---
 
-This approach for password management do not require any vault to store passwords. The only thing that you to keep is **cipher** and **site name**. The tool will regenerate same password based on this 2 things.
+The password generator works by utilizing a Unicode-based cipher and a site name to generate a password. The process of generating the password can be broken down into the following steps:
+
+1. Creation of the cipher: A Unicode-based cipher is created that will be used as the basis for the password generation process. This cipher can be any string, but it is recommended that it be a passphrase.
+2. Encryption of the site name: The site name is encrypted using the PBKDF2-HMAC(SHA-256) algorithm. PBKDF2-HMAC is a key derivation function that uses a password and a pseudorandom function (in this case, HMAC-SHA256) to derive a cryptographic key from a password.
+3. Mapping to the RFC1924 character set: The result of the encryption is then mapped to the [RFC1924](https://www.rfc-editor.org/rfc/rfc1924) character set. This character set defines a set of printable characters that can be used in a password.
+4. Generation of the password string: The final step is to generate a password string based on the mapped characters. This password string can then be used as the user's password for the given site.
+
+This password generation approach doesn't require the storage of passwords in a vault, as the only information that needs to be kept is the cipher and the site name. Given these two pieces of information, the password can be regenerated at any time.
 
 This tool inspired by [Password bookmarklet](https://github.com/dotcypress/password) and [Obliviate](https://github.com/elfenware/obliviate).
 
@@ -13,12 +20,12 @@ This tool inspired by [Password bookmarklet](https://github.com/dotcypress/passw
 CLI:
 
 ```bash
-node ./bin/cypher.mjs 'correct horse battery staple' github.com
+./bin/cypher.mjs 'correct horse battery staple' github.com
 ```
 or you could set cipher as environment variable. In this case you do not need to pass it as argument.
 
 ```bash
-ENIGMA_CIPHER='correct horse battery staple' node ./bin/cypher.mjs github.com
+CIPHER_MACHINE_CIPHER='correct horse battery staple' ./bin/cypher.mjs github.com
 ```
 
 Web:
