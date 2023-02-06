@@ -1,4 +1,3 @@
-import pbkdf2Hmac from './libs/pkdf2Hmac.js';
 import generatePassword from "./password-generator.mjs";
 import generateEmoji from "./emoji-generator.mjs";
 import generateBackgroundColor from "./background-generator.mjs";
@@ -8,10 +7,15 @@ async function handleGeneratePassword() {
     const cipher = document.getElementById("cipher").value;
 
     if (site.length > 0) {
-        var password = await generatePassword(pbkdf2Hmac, cipher, site);
+        const password = await generatePassword(cipher, site);
+        const colorsRgba = generateBackgroundColor(password.indices);
+        const emoji = generateEmoji(password.indices);
+
         document.getElementById("password").value = password.password;
-        document.getElementById("hint").innerText = generateEmoji(password.indices);
-        generateBackgroundColor(password.indices);
+        document.getElementById("hint").innerText = emoji;
+        document.documentElement.style.setProperty('--color1', colorsRgba.color1);
+        document.documentElement.style.setProperty('--color2', colorsRgba.color2);
+        document.documentElement.style.setProperty('--color3', colorsRgba.color3);
     }
 }
 

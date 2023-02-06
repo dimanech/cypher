@@ -12,7 +12,5 @@ export default function generateBackgroundColor(indices) {
         color3: `rgba(${colors.slice(6, 9).join(',')}, 0.5)`,
     };
 
-    document.documentElement.style.setProperty('--color1', colorsRgba.color1);
-    document.documentElement.style.setProperty('--color2', colorsRgba.color2);
-    document.documentElement.style.setProperty('--color3', colorsRgba.color3);
+    return colorsRgba;
 }

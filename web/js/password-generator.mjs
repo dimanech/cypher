@@ -1,6 +1,8 @@
 // https://github.com/dotcypress/password/blob/master/pages/index.js
 // https://github.com/elfenware/obliviate-web/blob/main/src/App.svelte
 
+import pbkdf2Hmac from './libs/pkdf2Hmac.js';
+
 const passwordLength = 16;
 
 const ALLOWED_CHARS = [
@@ -13,7 +15,7 @@ const ALLOWED_CHARS = [
     '>', '?', '@', '^', '_', '`', '{', '|', '}', '~'
 ];
 
-async function generatePassword(pbkdf2Hmac, cipher, site) {
+async function generatePassword(cipher, site) {
     if (!site || !cipher) {
         return '';
     }

@@ -114,6 +114,7 @@ input::placeholder {
 
 .header p {
     margin-top: 0;
+    white-space: nowrap;
 }
 
 .main {
